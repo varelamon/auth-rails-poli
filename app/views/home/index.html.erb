@@ -1,0 +1,19 @@
+<h3>Sistema de autenticacion y registro</h3>
+
+
+
+<% if user_signed_in? %>
+
+<div class="col-md-8 col-lg-offset-2">
+	<div class="well">
+		Hola <%= (current_user.name) %>
+
+		<div class="pull-right">
+		<small>
+			<%= t (:your_last_login) %> <%= l current_user.last_sign_in_at.to_date, format: :long %>
+		</small>
+
+	</div>
+</div>
+
+<% end %>

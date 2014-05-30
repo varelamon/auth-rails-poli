@@ -1,0 +1,18 @@
+<div class="authform">
+  <div class="well">
+    <h3>Editar Perfil</h3>
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="form-inputs">
+      <%= f.input :username %>
+      <%= f.input :email %>
+      <%= f.input :name %>
+      <div> Dejar en blanco si no quiere cambiarla.</div>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
+    </div>
+    <%= f.button :submit, class: 'btn btn-lg btn-success btn-block', disable_with: 'Procesando...' %>
+    <% end %>
+  </div>
+</div>
+

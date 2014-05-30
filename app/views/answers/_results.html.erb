@@ -1,0 +1,17 @@
+<div class="alert alert-<%= @results[:verify] ? 'success' : 'danger' %>">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<div id="flash_notice">
+		<% if @results[:verify] %>
+		<p>Sus respuestas fueron satisfactoriamente verificadas</p>
+		<p>Vas a recibir un correo con instrucciones sobre cómo resetear tu contraseña en unos pocos minutos.</p>
+		<% else %>
+		<p> Las siguientes respuestas dadas no concuerdan con las que ingresaste al momento de registrarte.</p>
+		<ul>
+			<% @results[:bad].each do |answer| %>
+			<% next unless answer %>
+			<li><%= answer %></li>
+			<% end %>
+		</ul>
+		<% end %>
+	</div>
+</div>

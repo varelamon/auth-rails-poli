@@ -1,0 +1,30 @@
+  <h3>Olvidaste tu contraseña?</h3>
+
+<div class="authform">
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f| %>
+
+  <p>Te podemos enviar las instrucciones de reseteo por correo electronico.</p>
+  <%= devise_error_messages! %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+  </div>
+  <%= f.submit 'Resetear contraseña', :class => 'button right' %>
+  <% end %>
+
+</div>
+
+<div class="authform">
+
+
+  <%= simple_form_for :answers, :url => '/answers', method: :get do |f| %>
+    <p>   Tambien podemos generate una clave nueva respondiendo las preguntas que especificaste al momento de registrarte</p>
+     <div class="form-group">
+  <%= f.input :username, label: 'Nombre de Usuario' %>
+    </div>
+    <%= f.submit 'Generar preguntas', :class => 'button right' %>
+  <% end %>
+
+
+</div>
+

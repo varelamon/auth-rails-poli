@@ -1,0 +1,16 @@
+<%# add navigation links to this file %>
+
+<% if user_signed_in? %>
+  <li><%= link_to 'Editar mi cuenta', edit_user_registration_path %></li>
+<% else %>
+  <li><%= link_to 'Registrarse', new_user_registration_path %></li>
+<% end %>
+<% if user_signed_in? and current_user.admin?  %>
+  <li><%= link_to 'Usuarios', users_path %></li>
+  <li><%= link_to 'Preguntas', questions_path %></li>
+<% end %>
+<% if user_signed_in? %>
+  <li><%= link_to 'Cerrar Sesion', destroy_session_path, :method=>'delete' %></li>
+<% else %>
+  <li><%= link_to 'Iniciar Sesion', new_session_path %></li>
+<% end %>

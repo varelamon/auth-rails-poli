@@ -1,0 +1,27 @@
+es:
+  your_last_login: "Su último ingreso fue el"
+  #Devise related
+  "Are you sure?": "¿Está seguro?"
+  "Forgot your password?": "¿Olvidó su contraseña?"
+  "Send me reset password instructions": "Enviar instrucciones"
+  "Change your password": "Cambiar su contraseña"
+  "Change my password": "Cambiar mi contraseña"
+  "New password": "Nueva contraseña"
+  "Confirm your new password": "Confirmar nueva contraseña"
+  remember_me: Recordarme
+  activerecord:
+    models:
+      user: Usuario
+      question: Pregunta
+      answer: Respuesta
+    attributes:
+      user:
+        username: Nombre de Usuario
+        name: Nombres
+        password: Contraseña
+        password_confirmation: Confirmacion contraseña
+      question:
+        text: Texto
+        question: Pregunta
+      answer:
+        answer: Respuesta

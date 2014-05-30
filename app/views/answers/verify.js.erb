@@ -1,0 +1,9 @@
+$('#results').html('');
+
+<% if @results[:verify] %>
+	$('#results').append('<%= j render("results", :new_password => @new_password) %>');
+	$('.simple_form.answers').trigger("reset");
+<% else %>
+	$('#results').append('<%= j render("results", :bad => @results[:bad]) %>');
+
+<% end %>

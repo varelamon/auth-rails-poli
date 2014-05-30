@@ -1,0 +1,15 @@
+<%= simple_form_for(@question) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-xs-12">
+       <%= f.input :text, required: true %>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="form-actions">
+      <%= f.button :submit, class: 'btn btn-lg btn-success btn-block', disable_with: 'Procesando...' %>
+  </div>
+<% end %>

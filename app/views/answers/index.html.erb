@@ -1,0 +1,42 @@
+<div class="authform">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Listado de Preguntas <%= @user.name %></h3>
+    </div>
+    <div class="panel-body">
+     <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Texto</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%= simple_form_for :answers, :url => '/answers/verify', remote: true do |f| %>
+         <%= f.hidden_field :username, value: @user.username %>
+        <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.text %></td>
+
+          <td>
+            <%= f.input_field :answers, label: false, multiple: true %>
+            <%= f.hidden_field :question_id, value: question.id, multiple: true  %>
+          </td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+    <%= f.submit 'Verificar', :class => 'button right', disable_with: 'Verificando...' %>
+    <div id="results" class="col-xs-10">
+    </div>
+    <br>
+ <% end %>
+  </div>
+</div>
+
+</div>
+</div>
+
+
