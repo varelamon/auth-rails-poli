@@ -15,7 +15,6 @@
 development:
   adapter:  postgresql
   host:     localhost
-  encoding: unicode
   database: auth_rails_development
   pool:     5
   username: polijic
@@ -43,7 +42,6 @@ development:
 test:
   adapter:  postgresql
   host:     localhost
-  encoding: unicode
   database: auth_rails_test
   pool:     5
   username: polijic
@@ -52,7 +50,6 @@ test:
 production:
   adapter:  postgresql
   host:     localhost
-  encoding: unicode
   database: auth_rails_production
   pool:     5
   username: polijic
